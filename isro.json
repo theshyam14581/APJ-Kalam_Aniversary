@@ -1,0 +1,137 @@
+[
+  {
+    "mission_id": "ISRO-01",
+    "name": "Aryabhata",
+    "launch_year": "1975",
+    "type": "Earth Observation",
+    "status": "Success",
+    "description": "Bharat ka pehla upagrah (satellite) jise Soviet Union ke rocket ki madad se kamyabi se launch kiya gaya tha.",
+    "image":"./public/spaceMiss/nisar.png"
+  },
+  {
+    "mission_id": "ISRO-02",
+    "name": "Chandrayaan-1",
+    "launch_year": "2008",
+    "type": "Lunar Exploration",
+    "status": "Success",
+    "description": "Bharat ka pehla Moon Orbiter mission, jisne chandrama par pani ke anuan (Water Molecules) ki aitihasik khoj ki thi.",
+    "image":"./public/spaceMiss/nisar.png"
+  },
+  {
+    "mission_id": "ISRO-03",
+    "name": "Mangalyaan (MOM)",
+    "launch_year": "2013",
+    "type": "Mars Exploration",
+    "status": "Success",
+    "description": "Apne pehle hi prayas mein Mars (Mangal) ki kaksha mein pahunchkar ISRO ne duniya mein naya kirtiman banaya.",
+    "image":"./public/spaceMiss/nisar.png"
+  },
+  {
+    "mission_id": "ISRO-04",
+    "name": "AstroSat",
+    "launch_year": "2015",
+    "type": "Space Observatory",
+    "status": "Operational",
+    "description": "Bharat ki pehli dedicated multi-wavelength space observatory jo black holes aur cosmic X-ray sources ka adhyayan karti hai.",
+    "image":"./public/spaceMiss/nisar.png"
+  },
+  {
+    "mission_id": "ISRO-05",
+    "name": "PSLV-C37",
+    "launch_year": "2017",
+    "type": "Record Launch",
+    "status": "Success",
+    "description": "Ek hi PSLV rocket se ek saath 104 satellites ko space mein bhejkar ISRO ne tab ka sabse bada world record banaya tha.",
+    "image":"./public/spaceMiss/nisar.png"
+  },
+  {
+    "mission_id": "ISRO-06",
+    "name": "Chandrayaan-2",
+    "launch_year": "2019",
+    "type": "Lunar Exploration",
+    "status": "Partial Success (Orbiter Active)",
+    "description": "Is mission ka lander crash ho gaya tha, lekin iska Orbiter aaj bhi chandrama ki bilkul sateek tasveerein bhej raha hai.",
+    "image":"./public/spaceMiss/nisar.png"
+  },
+  {
+    "mission_id": "ISRO-07",
+    "name": "Chandrayaan-3",
+    "launch_year": "2023",
+    "type": "Lunar Exploration",
+    "status": "Success",
+    "description": "Chandrama ke Dakhshini Dhruv (South Pole) par soft-landing karne wala Bharat duniya ka sabse pehla desh bana.",
+    "image":"./public/spaceMiss/nisar.png"
+  },
+  {
+    "mission_id": "ISRO-08",
+    "name": "Aditya-L1",
+    "launch_year": "2023",
+    "type": "Solar Exploration",
+    "status": "Operational",
+    "description": "Surya ka adhyayan karne wala Bharat ka pehla mission, jo Lagrange Point 1 (L1) par sthit rehkar data bhej raha hai.",
+    "image":"./public/spaceMiss/nisar.png"
+  },
+  {
+    "mission_id": "ISRO-09",
+    "name": "XPoSat",
+    "launch_year": "2024",
+    "type": "Astronomy",
+    "status": "Operational",
+    "description": "Black holes aur neutron stars se nikalne wali X-rays ka polarimetry study karne wala duniya ka dusra dedicated mission.",
+    "image":"./public/spaceMiss/nisar.png"
+  },
+  {
+    "mission_id": "ISRO-10",
+    "name": "SpaDeX",
+    "launch_year": "2025",
+    "type": "Space Docking",
+    "status": "Success",
+    "description": "Space mein do alag-alag satellites ko aapas mein jodne (docking) ki technology ka parikshan, jo Indian Space Station ke liye zaroori hai.",
+    "image":"./public/spaceMiss/nisar.png"
+  },
+  {
+    "mission_id": "ISRO-11",
+    "name": "Axiom Mission 4 (Ax-4)",
+    "launch_year": "2025",
+    "type": "Human Spaceflight",
+    "status": "Success",
+    "description": "ISRO ke astronaut Shubhanshu Shukla ne is mission ke zariye International Space Station (ISS) par kamyabi se samay bitaya.",
+    "image":"./public/spaceMiss/axiom.png"
+  },
+  {
+    "mission_id": "ISRO-12",
+    "name": "NISAR",
+    "launch_year": "2025",
+    "type": "Earth Observation",
+    "status": "Operational",
+    "description": "NASA aur ISRO ka joint radar imaging mission, jo poori prithvi ki sateeh halchal aur climate change par nazar rakhta hai.",
+    "image":"./public/spaceMiss/nisar.png"
+  },
+  {
+    "mission_id": "ISRO-13",
+    "name": "GSLV-F17 / EOS-05",
+    "launch_year": "2026",
+    "type": "Earth Observation",
+    "status": "Success",
+    "description": "4 September 2026 ko kamyabi se launch kiya gaya advanced weather satellite, jo cyclone aur disaster management mein madad karta hai.",
+    "image":"./public/spaceMiss/gslv.png"
+  },
+  {
+    "mission_id": "ISRO-14",
+    "name": "Gaganyaan-1 (G1)",
+    "launch_year": "2026",
+    "type": "Human Spaceflight Test",
+    "status": "Planned",
+    "description": "Bharat ke pehle manav-yukt mission ka pehla bina insaan wala test flight, jisme 'Vyommitra' humanoid robot ko bheja jayega.",
+    "image": "./public/spaceMiss/gaganyaan.png"
+  },
+  {
+    "mission_id": "ISRO-15",
+    "name": "Chandrayaan-4",
+    "launch_year": "2027",
+    "type": "Lunar Sample Return",
+    "status": "Planned",
+    "description": "Chandrama ki satah se mitti aur pattharon ke samples ko wapas dharti (Earth) par surakshit lekar aane wala agla bada mission.",
+    "image":"./public/spaceMiss/nisar.png"
+  }
+]

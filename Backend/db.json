@@ -1,0 +1,65 @@
+{
+  "students": [
+    {
+      "name": "theshyam",
+      "email": "shyambairwa16@gmail.com",
+      "age": "25",
+      "id": "ZN00u159gsM"
+    },
+    {
+      "name": "anikat kumar",
+      "email": "kumaraniket27@gmail.com",
+      "age": "22",
+      "id": "h_9blXYaWyo"
+    },
+    {
+      "name": "deepesh Nirwan",
+      "email": "nirwandeepu07@gmail.com",
+      "age": "23",
+      "id": "OF1Y1fG0eKo"
+    },
+    {
+      "name": "naveen kumar",
+      "email": "nkbadodiya30@gmail.com",
+      "age": "20",
+      "id": "YSEeOjJwtVs"
+    },
+    {
+      "name": "vijay kumar saini",
+      "email": "banasayavijay12@gmail.com",
+      "age": "22",
+      "id": "cSarNgZBl2c"
+    },
+    {
+      "name": "ravi mahawar",
+      "email": "ravijayoti1212@gmail.com",
+      "age": "26",
+      "id": "AhMDG2OrtBY"
+    },
+    {
+      "name": "kings",
+      "email": "hardeepsingh@gmail.com",
+      "age": "22",
+      "id": "sA_hYW4b9ps"
+    },
+    {
+      "name": "salman khan",
+      "email": "khansalman@gmail.com",
+      "age": "21",
+      "id": "TgzyykEyH0Y"
+    },
+    {
+      "name": "manmohan singh",
+      "email": "singhmanmohan123@gmail.com",
+      "age": "90",
+      "id": "Dg6by_CQwFk"
+    },
+    {
+      "name": "ratan singh",
+      "email": "singhratan@gmail.com",
+      "age": "33",
+      "id": "bbu2ugrPRqY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

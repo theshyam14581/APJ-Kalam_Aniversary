@@ -1,0 +1,64 @@
+{
+  "satellite_name": "AstroSat",
+  "organization": "Indian Space Research Organisation (ISRO)",
+  "mission_type": "Space Astronomy Observatory",
+  "launch_details": {
+    "date": "2015-09-28",
+    "launch_vehicle": "PSLV-XL (PSLV-C30)",
+    "launch_site": "SDSC SHAR, Sriharikota, India"
+  },
+  "orbital_parameters": {
+    "altitude": "650 km",
+    "inclination": "6 degrees",
+    "orbit_type": "Near-Equatorial Orbit"
+  },
+  "scientific_objectives": [
+    "Understand high-energy processes in binary star systems containing neutron stars and black holes.",
+    "Estimate the magnetic fields of neutron stars.",
+    "Study star birth regions and high-energy processes in star systems lying beyond our galaxy.",
+    "Detect new briefly bright X-ray sources in the sky.",
+    "Perform a limited deep field survey of the Universe in the Ultraviolet region."
+  ],
+  "scientific_payloads": [
+    {
+      "abbreviation": "UVIT",
+      "full_name": "Ultra Violet Imaging Telescope",
+      "developed_by": "Indian Institute of Astrophysics (IIA)",
+      "spectral_bands": "Far-UV (130-180 nm), Near-UV (200-300 nm), Visible (320-550 nm)",
+      "key_feature": "Highest angular resolution of 1.5 arcsec, which is 3 times better than NASA's GALEX."
+    },
+    {
+      "abbreviation": "LAXPC",
+      "full_name": "Large Area X-ray Proportional Counter",
+      "developed_by": "Tata Institute of Fundamental Research (TIFR)",
+      "spectral_bands": "3-80 keV X-rays",
+      "key_feature": "Possesses the largest collecting area compared to any other X-ray detector in the world till date."
+    },
+    {
+      "abbreviation": "SXT",
+      "full_name": "Soft X-ray Telescope",
+      "developed_by": "Tata Institute of Fundamental Research (TIFR)",
+      "spectral_bands": "0.3-8 keV X-rays",
+      "key_feature": "Uses X-ray reflecting mirrors and a CCD for precise imaging and spectral studies."
+    },
+    {
+      "abbreviation": "CZTI",
+      "full_name": "Cadmium Zinc Telluride Imager",
+      "developed_by": "Tata Institute of Fundamental Research (TIFR)",
+      "spectral_bands": "10-150 keV Hard X-rays",
+      "key_feature": "Unique capability of measuring X-ray polarization and acts as an open detector beyond 100 keV."
+    },
+    {
+      "abbreviation": "SSM",
+      "full_name": "Scanning Sky Monitor",
+      "developed_by": "ISRO Satellite Centre (ISAC)",
+      "spectral_bands": "2.5-10 keV X-rays",
+      "key_feature": "All-sky monitor designed for detecting and monitoring transient X-ray sources."
+    }
+  ],
+  "data_management": {
+    "ground_station": "Mission Operations Complex (MOX) at ISTRAC, Bengaluru",
+    "processing_and_archive": "Indian Space Science Data Centre (ISSDC), Bylalu",
+    "support_cell": "AstroSat Support Cell (ASC) at IUCAA, Pune"
+  }
+}
