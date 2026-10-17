@@ -3,20 +3,36 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Alluser = () => {
   const [content, setContent] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   // Fetch all users
   const getData = async () => {
     try {
+      setLoading(true);
+      setError("");
+
+      if (!API_URL) {
+        throw new Error("Backend API URL is missing. Check your .env file.");
+      }
+
       const response = await axios.get(
-        "http://localhost:3000/students"
+        `${API_URL.replace(/\/+$/, "")}/students`
       );
 
       setContent(response.data);
     } catch (err) {
       console.error("Error fetching users:", err);
+
+      setError(
+        err.response?.data?.message ||
+          err.message ||
+          "Failed to load users."
+      );
     } finally {
       setLoading(false);
     }
@@ -32,17 +48,21 @@ const Alluser = () => {
 
     try {
       await axios.delete(
-        `http://localhost:3000/students/${id}`
+        `${API_URL.replace(/\/+$/, "")}/students/${id}`
       );
 
       setContent((prev) =>
-        prev.filter((ele) => ele.id !== id)
+        prev.filter((ele) => String(ele.id) !== String(id))
       );
 
       alert("User deleted successfully!");
     } catch (err) {
       console.error("Error deleting user:", err);
-      alert("Failed to delete user!");
+
+      alert(
+        err.response?.data?.message ||
+          "Failed to delete user. Please try again."
+      );
     }
   };
 
@@ -51,53 +71,60 @@ const Alluser = () => {
   }, []);
 
   return (
-    <main className="relative isolate min-h-screen overflow-hidden
-      bg-[#030712] px-4 py-12 text-white sm:px-6 lg:px-10">
-
+    <main
+      className="relative isolate min-h-screen overflow-hidden
+      bg-[#030712] px-4 py-12 text-white sm:px-6 lg:px-10"
+    >
       {/* Cosmic background */}
-      <div className="absolute inset-0 -z-10
-        bg-[radial-gradient(ellipse_at_15%_15%,rgba(79,70,229,0.22),transparent_40%),radial-gradient(ellipse_at_90%_85%,rgba(8,145,178,0.14),transparent_35%)]">
-      </div>
+      <div
+        className="absolute inset-0 -z-10
+        bg-[radial-gradient(ellipse_at_15%_15%,rgba(79,70,229,0.22),transparent_40%),radial-gradient(ellipse_at_90%_85%,rgba(8,145,178,0.14),transparent_35%)]"
+      ></div>
 
       {/* Static stars */}
-      <div className="absolute inset-0 -z-10
+      <div
+        className="absolute inset-0 -z-10
         bg-[radial-gradient(white_1px,transparent_1px)]
-        [background-size:45px_45px] opacity-15">
-      </div>
+        [background-size:45px_45px] opacity-15"
+      ></div>
 
       <section className="mx-auto max-w-7xl">
-
         {/* Page heading */}
         <div className="mb-10 text-center">
-
-          <div className="mx-auto mb-4 flex h-16 w-16
+          <div
+            className="mx-auto mb-4 flex h-16 w-16
             items-center justify-center rounded-2xl
             border border-indigo-400/30 bg-indigo-500/10
-            text-3xl">
+            text-3xl"
+          >
             👨‍🚀
           </div>
 
-          <p className="text-xs font-bold uppercase
-            tracking-[0.3em] text-cyan-400">
+          <p
+            className="text-xs font-bold uppercase
+            tracking-[0.3em] text-cyan-400"
+          >
             ShyamSpaceX • Mission Control
           </p>
 
-          <h1 className="mt-3 text-3xl font-black
-            sm:text-4xl lg:text-5xl">
+          <h1
+            className="mt-3 text-3xl font-black
+            sm:text-4xl lg:text-5xl"
+          >
             All <span className="text-indigo-400">Explorers</span>
           </h1>
 
           <p className="mt-3 text-sm text-slate-400 sm:text-base">
             Manage registered users and their information.
           </p>
-
         </div>
 
         {/* User count */}
-        <div className="mb-5 flex flex-wrap items-center
+        <div
+          className="mb-5 flex flex-wrap items-center
           justify-between gap-4 rounded-xl border
-          border-white/10 bg-slate-950/70 p-5">
-
+          border-white/10 bg-slate-950/70 p-5"
+        >
           <div>
             <p className="text-sm text-slate-400">
               Registered Explorers
@@ -111,27 +138,28 @@ const Alluser = () => {
           <Link
             to="/createusers"
             className="rounded-lg bg-indigo-600 px-5 py-3
-              text-sm font-bold text-white hover:bg-indigo-500"
+            text-sm font-bold text-white hover:bg-indigo-500"
           >
             + Create User
           </Link>
-
         </div>
 
         {/* Table container */}
-        <div className="overflow-hidden rounded-2xl
+        <div
+          className="overflow-hidden rounded-2xl
           border border-indigo-400/20 bg-slate-950/80
-          shadow-2xl shadow-indigo-950/30">
-
+          shadow-2xl shadow-indigo-950/30"
+        >
           <div className="overflow-x-auto">
-
-            <table className="w-full min-w-[720px]
-              border-collapse text-left text-sm">
-
+            <table
+              className="w-full min-w-[720px]
+              border-collapse text-left text-sm"
+            >
               {/* Table header */}
-              <thead className="bg-indigo-950/90
-                text-xs uppercase tracking-wider text-indigo-200">
-
+              <thead
+                className="bg-indigo-950/90
+                text-xs uppercase tracking-wider text-indigo-200"
+              >
                 <tr>
                   <th className="px-6 py-5 font-bold">ID</th>
                   <th className="px-6 py-5 font-bold">Name</th>
@@ -141,35 +169,48 @@ const Alluser = () => {
                     Actions
                   </th>
                 </tr>
-
               </thead>
 
               {/* Table body */}
               <tbody className="divide-y divide-white/10">
-
                 {loading ? (
                   <tr>
-                    <td colSpan="5"
-                      className="px-6 py-12 text-center text-cyan-300">
+                    <td
+                      colSpan="5"
+                      className="px-6 py-12 text-center text-cyan-300"
+                    >
                       Loading explorers...
                     </td>
                   </tr>
+                ) : error ? (
+                  <tr>
+                    <td colSpan="5" className="px-6 py-12 text-center">
+                      <p className="text-red-400">{error}</p>
+
+                      <button
+                        type="button"
+                        onClick={getData}
+                        className="mt-4 rounded-lg bg-indigo-600
+                        px-5 py-2 font-semibold hover:bg-indigo-500"
+                      >
+                        Try Again
+                      </button>
+                    </td>
+                  </tr>
                 ) : content.length > 0 ? (
-
                   content.map((ele, index) => (
-
                     <tr
                       key={ele.id ?? index}
                       className="bg-slate-950/30 hover:bg-indigo-500/10"
                     >
-
-                      <td className="px-6 py-5 font-bold
-                        text-cyan-400">
+                      <td
+                        className="px-6 py-5 font-bold
+                        text-cyan-400"
+                      >
                         #{ele.id ?? index + 1}
                       </td>
 
-                      <td className="px-6 py-5 font-semibold
-                        text-white">
+                      <td className="px-6 py-5 font-semibold text-white">
                         {ele.name}
                       </td>
 
@@ -182,15 +223,16 @@ const Alluser = () => {
                       </td>
 
                       <td className="px-6 py-5">
-                        <div className="flex items-center
-                          justify-center gap-3">
-
+                        <div
+                          className="flex items-center
+                          justify-center gap-3"
+                        >
                           <Link
                             to={`/updatedata/${ele.id}`}
                             className="rounded-lg border
-                              border-cyan-400/30 bg-cyan-500/10
-                              px-4 py-2 font-semibold text-cyan-300
-                              hover:bg-cyan-500/20"
+                            border-cyan-400/30 bg-cyan-500/10
+                            px-4 py-2 font-semibold text-cyan-300
+                            hover:bg-cyan-500/20"
                           >
                             Edit
                           </Link>
@@ -199,26 +241,19 @@ const Alluser = () => {
                             type="button"
                             onClick={() => deleteHandler(ele.id)}
                             className="rounded-lg border
-                              border-red-400/30 bg-red-500/10
-                              px-4 py-2 font-semibold text-red-300
-                              hover:bg-red-500/20"
+                            border-red-400/30 bg-red-500/10
+                            px-4 py-2 font-semibold text-red-300
+                            hover:bg-red-500/20"
                           >
                             Delete
                           </button>
-
                         </div>
                       </td>
-
                     </tr>
-
                   ))
-
                 ) : (
-
                   <tr>
-                    <td colSpan="5"
-                      className="px-6 py-14 text-center">
-
+                    <td colSpan="5" className="px-6 py-14 text-center">
                       <div className="text-4xl">🪐</div>
 
                       <h3 className="mt-4 text-lg font-bold text-white">
@@ -228,29 +263,24 @@ const Alluser = () => {
                       <p className="mt-2 text-sm text-slate-400">
                         Create a new user to begin your mission.
                       </p>
-
                     </td>
                   </tr>
-
                 )}
-
               </tbody>
-
             </table>
-
           </div>
 
           {/* Table footer */}
-          <div className="border-t border-white/10
-            px-6 py-4 text-xs text-slate-500">
-            SHYAMSPACEX <span className="mx-2 text-indigo-400">•</span>
+          <div
+            className="border-t border-white/10
+            px-6 py-4 text-xs text-slate-500"
+          >
+            SHYAMSPACEX
+            <span className="mx-2 text-indigo-400">•</span>
             Explorer Management System
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 };
