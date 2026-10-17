@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import kalamJi from "../assets/kalamJi.png";
+import kalamJi from "../assets/kalamJI.png";
 import isromis from "../../isro.json";
 
 const About = () => {
